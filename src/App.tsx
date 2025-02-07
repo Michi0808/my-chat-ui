@@ -3,14 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ChatForm from "./components/ChatForm";
+import DataList from "./components/DataList";
 
 function App() {
   return (
     <div className="flex flex-col h-screen">
-      {/* Message list area (placeholder) */}
-      <div className="flex-1 bg-gray-200 p-4">
-        Message list area
-      </div>
+      {/* Scrollable data list */}
+      <DataList />
       
       {/* Chat input form at the bottom */}
       <ChatForm />
