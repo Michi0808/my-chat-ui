@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card, CardContent, Typography } from "@mui/material";
 import Sidebar from "./Sidebar";
 
 const dummyData = [
@@ -30,16 +31,32 @@ const DataList = () => {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 bg-white border-t border-b">
+    <div className="flex-1 overflow-y-auto p-4 bg-gray-900 text-white">
       {dummyData.map((item) => (
-        <div
+        <Card
           key={item.id}
-          className="mb-2 p-3 bg-gray-100 rounded shadow cursor-pointer hover:bg-gray-200 transition"
+          className="mb-4 cursor-pointer transition"
           onClick={() => handleItemClick(item)}
+          sx={{
+            backgroundColor: "#1e1e2f",
+            color: "#fff",
+            borderRadius: "10px",
+            padding: "12px",
+            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            transition: "transform 0.2s ease, box-shadow 0.2s ease",
+            "&:hover": {
+              transform: "translateY(-4px)",
+              boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.2)",
+            },
+          }}
         >
-          <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-sm text-gray-600">{item.description}</p>
-        </div>
+          <CardContent>
+            <Typography variant="h6">{item.name}</Typography>
+            <Typography variant="body2" color="gray">
+              {item.description}
+            </Typography>
+          </CardContent>
+        </Card>
       ))}
 
       {/* Sidebar Component */}
