@@ -31,7 +31,14 @@ const DataList = () => {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 bg-gray-900 text-white">
+    <div
+      className="flex-1 overflow-y-auto p-4 bg-gray-900 text-white"
+      style={{
+        maxHeight: "80vh", // Limit height for scrolling
+        scrollbarWidth: "thin", // For Firefox
+        scrollbarColor: "#8a2be2 #1e1e2f", // For Firefox
+      }}
+    >
       {dummyData.map((item) => (
         <Card
           key={item.id}
