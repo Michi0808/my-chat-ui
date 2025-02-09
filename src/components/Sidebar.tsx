@@ -1,11 +1,25 @@
-import { Drawer, IconButton, Typography } from "@mui/material";
+import { Drawer, IconButton, Typography, Chip } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 type SidebarProps = {
   isOpen: boolean;
   onClose: () => void;
-  selectedItem: { id: number; name: string; description: string } | null;
+  selectedItem: {
+    id: number;
+    client: string;
+    email: string;
+    date: string;
+    status: string;
+    country: string;
+    total: string;
+  } | null;
 };
+
+const statusColors = {
+  Delivered: "success",
+  Canceled: "error",
+  Pending: "warning",
+} as const;
 
 const Sidebar = ({ isOpen, onClose, selectedItem }: SidebarProps) => {
   return (
@@ -23,22 +37,46 @@ const Sidebar = ({ isOpen, onClose, selectedItem }: SidebarProps) => {
         },
       }}
     >
+      {/* Header with close button */}
       <div className="flex justify-between items-center">
-        <Typography variant="h6" sx={{ fontWeight: "bold" }}>Details</Typography>
+        <Typography variant="h6" sx={{ fontWeight: "bold" }}>Order Details</Typography>
         <IconButton onClick={onClose} sx={{ color: "#ffffff", "&:hover": { color: "#a855f7" } }}>
           <CloseIcon fontSize="large" />
         </IconButton>
       </div>
+
+      {/* Display selected order details */}
       {selectedItem ? (
-        <div className="mt-4">
-          <Typography variant="h5" sx={{ fontWeight: "bold" }}>{selectedItem.name}</Typography>
-          <Typography variant="body1" className="text-gray-400 mt-2">
-            {selectedItem.description}
+        <div className="mt-4 space-y-3">
+          <Typography variant="body1">
+            <strong>Order:</strong> #{selectedItem.id}
+          </Typography>
+          <Typography variant="body1">
+            <strong>Client:</strong> {selectedItem.client}
+          </Typography>
+          <Typography variant="body2" sx={{ color: "gray" }}>
+            {selectedItem.email}
+          </Typography>
+          <Typography variant="body1">
+            <strong>Date:</strong> {selectedItem.date}
+          </Typography>
+          <Typography variant="body1">
+            <strong>Status:</strong>{" "}
+            <Chip
+              label={selectedItem.status}
+              color={statusColors[selectedItem.status as keyof typeof statusColors]}
+            />
+          </Typography>
+          <Typography variant="body1">
+            <strong>Country:</strong> {selectedItem.country}
+          </Typography>
+          <Typography variant="body1" sx={{ fontWeight: "bold", fontSize: "1.2rem" }}>
+            <strong>Total:</strong> {selectedItem.total}
           </Typography>
         </div>
       ) : (
         <Typography variant="body1" className="text-gray-500 mt-4">
-          Select an item from the list.
+          Select an order from the list.
         </Typography>
       )}
     </Drawer>
