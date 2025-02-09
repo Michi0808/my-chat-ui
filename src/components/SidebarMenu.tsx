@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { List, ListItem, ListItemIcon, ListItemText, IconButton, Typography } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SettingsIcon from "@mui/icons-material/Settings";
 import PersonIcon from "@mui/icons-material/Person";
@@ -8,7 +6,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import Logo from "../assets/Logo.png";
 
 const SidebarMenu = () => {
-  const [open, setOpen] = useState(true);
+  const open = true;
 
   return (
     <div
@@ -33,25 +31,25 @@ const SidebarMenu = () => {
 
       {/* Menu List */}
       <List>
-        <ListItem component="li" button>
+        <ListItem component="li">
           <ListItemIcon>
             <DashboardIcon sx={{ color: "#a855f7" }} />
           </ListItemIcon>
           {open && <ListItemText primary="Dashboard" />}
         </ListItem>
-        <ListItem component="li" button>
+        <ListItem component="li">
           <ListItemIcon>
             <SettingsIcon sx={{ color: "#a855f7" }} />
           </ListItemIcon>
           {open && <ListItemText primary="Settings" />}
         </ListItem>
-        <ListItem component="li" button>
+        <ListItem component="li">
           <ListItemIcon>
             <PersonIcon sx={{ color: "#a855f7" }} />
           </ListItemIcon>
           {open && <ListItemText primary="Profile" />}
         </ListItem>
-        <ListItem component="li" button>
+        <ListItem component="li">
           <ListItemIcon>
             <LockIcon sx={{ color: "#a855f7" }} />
           </ListItemIcon>
