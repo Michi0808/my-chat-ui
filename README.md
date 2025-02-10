@@ -18,10 +18,10 @@ This project provides a chat UI with a dynamic sidebar and weather-based recomme
 ## Screens:
 
 **Default Screen**:
-[Default Sidebar](./screenshots/default-screen.png)
+![Default Sidebar](./screenshots/default-screen.png)
 
 **Sidebar After Clicking Data**:
-[Sidebar with Data](./screenshots/sidebar-with-data.png)
+![Sidebar with Data](./screenshots/sidebar-with-data.png)
 
 ## Detailed Logs:
 
