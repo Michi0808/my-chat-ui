@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
+# My Chat UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project provides a chat UI with a dynamic sidebar and weather-based recommendations, using various modern frontend technologies.
 
-Currently, two official plugins are available:
+## Tech Stack:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React (Vite)
+- **UI Framework**: MUI (Material-UI)
+- **Styling**: Tailwind CSS
+- **Programming Language**: TypeScript
+- **Version Control**: GitHub
+- **Deployment**: Vercel
 
-## Expanding the ESLint configuration
+## Deployment URL:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+[https://my-chat-ui-2tgq.vercel.app](https://my-chat-ui-2tgq.vercel.app)
 
-- Configure the top-level `parserOptions` property like this:
+## Screens:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+**Default Screen**:
+[Default Sidebar](./screenshots/default-screen.png)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+**Sidebar After Clicking Data**:
+[Sidebar with Data](./screenshots/sidebar-with-data.png)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Detailed Logs:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+For daily progress and detailed steps, refer to the [Logs directory](./dev_logs/).
+
+## Screenshots:
+
+Screenshots are available in the [Screenshots directory](./screenshots/).
